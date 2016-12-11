@@ -32,7 +32,6 @@ client.on('connected', function(address, port) {
 });
 
 client.on("whisper", function (from, userstate, message, self) {
-    // Don't listen to my own messages..
     if (message.startsWith("say ") && from == "#sylph96"){
         client.say(channel, message.split("say ")[1]);
         return;
